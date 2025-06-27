@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>My Notes</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="notepad-container">
+    <h1>📝 My Notes</h1>
+    <table>
+      <thead>
+        <tr>
+          <th>Note</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td id="note1">SP - Sending Email to Leadership</td>
+          <td><button onclick="copyText('note1')">📋 Copy</button></td>
+        </tr>
+        <tr>
+          <td id="note2">ACW - Long Notes</td>
+          <td><button onclick="copyText('note2')">📋 Copy</button></td>
+        </tr>
+        <tr>
+          <td id="note3">Stepping away to consult support/lead</td>
+          <td><button onclick="copyText('note3')">📋 Copy</button></td>
+        </tr>
+        <tr>
+          <td id="note3">1st Break</td>
+          <td><button onclick="copyText('note3')">📋 Copy</button></td>
+        </tr>
+        <tr>
+          <td id="note3">Last Break</td>
+          <td><button onclick="copyText('note3')">📋 Copy</button></td>
+        </tr>
+        <tr>
+          <td id="note3">Lunch</td>
+          <td><button onclick="copyText('note3')">📋 Copy</button></td>
+        </tr>
+        <tr>
+          <td id="note3">RR</td>
+          <td><button onclick="copyText('note3')">📋 Copy</button></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <script>
+    function copyText(noteId) {
+      const text = document.getElementById(noteId).innerText;
+      navigator.clipboard.writeText(text).then(() => {
+        alert('Note copied to clipboard!');
+      }).catch(err => {
+        alert('Failed to copy text: ' + err);
+      });
+    }
+  </script>
+
+</body>
+</html>
